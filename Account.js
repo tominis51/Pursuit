@@ -7,8 +7,7 @@ export default function Account () {
       <Text style={styles.title}>Account</Text>
 
       <View style={styles.profileSection}>
-        <Text style={styles.profileName}>Domas</Text>
-        <Text style={styles.profilePursuits}>4 Pursuits</Text>
+        <Text style={styles.profileName}>FirstName</Text>
       </View>
 
       <View style={styles.optionsSection}>

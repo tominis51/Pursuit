@@ -14,8 +14,8 @@ const Header = () => {
 
 export default function MyProfile () {
   const [userPicture, setUserPicture] = useState('https://example.com/profile-picture.jpg');
-  const [userName, setUserName] = useState('Domas Šestakovas');
-  const [userEmail, setUserEmail] = useState('domas@gmail.com');
+  const [userName, setUserName] = useState('FirstName LastName');
+  const [userEmail, setUserEmail] = useState('abc@email.com');
   const [userPhone, setUserPhone] = useState('+37082338232');
 
   return (
