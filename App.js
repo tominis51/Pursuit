@@ -11,7 +11,7 @@ import SignUp1 from './SignUp1';
 
 export default function App() {
   return (
-    <SignUp1></SignUp1>
+    <LoadingScreen></LoadingScreen>
   );
 }
 

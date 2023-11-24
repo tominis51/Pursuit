@@ -2,13 +2,15 @@ import React, { useState } from 'react';
 import { View, Image, StyleSheet, Text, TextInput, TouchableOpacity, ImageBackground } from 'react-native';
 import { ForgotPassword } from './ForgotPassword';
 
-export default function SignIn () {
+const SignIn = () => {
   
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+
   const handleSignUp = () => {
     // Implement sign-up logic here
   };
-  
-
   
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
@@ -31,8 +33,8 @@ export default function SignIn () {
           <TextInput
             style={styles.input}
             placeholder="abc@email.com"
-            value={this.state.email}
-            onChangeText={(email) => this.setState({ email })}
+            value={email}
+            onChangeText={(email) => setEmail({ email })}
             width={300}
           />
 
@@ -40,8 +42,8 @@ export default function SignIn () {
             style={styles.input}
             placeholder="Your password"
             secureTextEntry={true}
-            value={this.state.password}
-            onChangeText={(password) => this.setState({ password })}
+            value={password}
+            onChangeText={(password) => setPassword({ password })}
             width={300}
           />
 
@@ -120,4 +122,4 @@ const styles = StyleSheet.create({
   }
 });
 
-
+export default SignIn;
