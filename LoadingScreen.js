@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, Image, StyleSheet, ImageBackground, Text, TextInput, TouchableOpacity, ForgotPassword } from 'react-native';
-import SignIn from './SignIn'; // Import the SignIn component from SignIn.js
+import {SignIn} from './SignIn'; // Import the SignIn component from SignIn.js
 
 const LoadingScreen = () => {
   const [isLoading, setIsLoading] = useState(true);
