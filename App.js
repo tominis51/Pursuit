@@ -7,10 +7,11 @@ import MyProfile from './MyProfile';
 import * as React from 'react';
 import { NavigationContainer, TabNavigator, Screen } from '@react-navigation/native';
 import SignIn from './SignIn';
+import SignUp1 from './SignUp1';
 
 export default function App() {
   return (
-    <SignIn></SignIn>
+    <SignUp1></SignUp1>
   );
 }
 

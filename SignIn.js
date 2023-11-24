@@ -2,24 +2,14 @@ import React, { useState } from 'react';
 import { View, Image, StyleSheet, Text, TextInput, TouchableOpacity, ImageBackground } from 'react-native';
 import { ForgotPassword } from './ForgotPassword';
 
-class SignIn extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      email: '',
-      password: '',
-    };
-  }
-
-  handleSignIn = () => {
-    // Implement sign-in logic here
+export default function SignIn () {
+  
+  const handleSignUp = () => {
+    // Implement sign-up logic here
   };
+  
 
-  handleForgotPassword = () => {
-    // Implement password reset logic here
-  };
-
-  render() {
+  
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
         <ImageBackground source={require('./assets/backgroundSignIn.png')} resizeMode='cover' style={styles.image}>
@@ -66,7 +56,7 @@ class SignIn extends React.Component {
         </ImageBackground>
       </View>
     );
-  }
+  
 };
 
 const styles = StyleSheet.create({
@@ -130,4 +120,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default SignIn;
+
