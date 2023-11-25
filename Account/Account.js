@@ -1,6 +1,6 @@
 import React from 'react';
 import { ImageBackground, View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
-import { ProfilePic } from '../ProfilePic'
+
 
 const Account = () => {
   return (
