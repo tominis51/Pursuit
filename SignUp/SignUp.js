@@ -14,15 +14,15 @@ export default function SignUp1 () {
 
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <ImageBackground source={require('./assets/backgroundSignIn.png')} resizeMode='cover' style={styles.image}>
+        <ImageBackground source={require('../assets/backgroundSignIn.png')} resizeMode='cover' style={styles.image}>
 
           <Image
-            source={require('./assets/logo1.png')}
+            source={require('../assets/logo.png')}
             style={{
-              width: 75,
-              height: 75,
+              width: 70,
+              height: 70,
               position: 'absolute',
-              top: '17.5%',
+              top: '15%',
               left: '53%',
               transform: [{ translateX: -50 }, { translateY: -50 }],
             }}
@@ -35,7 +35,6 @@ export default function SignUp1 () {
             placeholder="Full name"
             value={fullName}
             onChangeText={(fullName) => this.setState({ fullName })}
-            width={275}
           />
 
           <TextInput
@@ -43,7 +42,6 @@ export default function SignUp1 () {
             placeholder="abc@email.com"
             value={email}
             onChangeText={(email) => this.setState({ email })}
-            width={275}
           />
 
           <TextInput
@@ -51,7 +49,6 @@ export default function SignUp1 () {
             placeholder="Phone number"
             value={phoneNumber}
             onChangeText={(phoneNumber) => this.setState({ phoneNumber })}
-            width={275}
           />
 
           <TextInput
@@ -60,7 +57,6 @@ export default function SignUp1 () {
             secureTextEntry={true}
             value={password}
             onChangeText={(password) => this.setState({ password })}
-            width={275}
           />
 
           <TextInput
@@ -69,14 +65,22 @@ export default function SignUp1 () {
             secureTextEntry={true}
             value={confirmPassword}
             onChangeText={(confirmPassword) => this.setState({ confirmPassword })}
-            width={275}
           />
 
           <TouchableOpacity onPress={this.handleSignIn} style={styles.signUpButton}>
             <Text style={styles.signUpButtonText}>Sign Up</Text>
           </TouchableOpacity>
 
-          <View style={{flexDirection: 'row', justifyContent: 'center', bottom: -100}}>
+          <Text style={{ fontSize: 16, color: 'white', top: '4%', left: '45%' }}>OR</Text>
+
+          <TouchableOpacity onPress={this.handleSignIn} style={styles.buttonGoogle}> 
+            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+              <Image source={require('../assets/GoogleLogo.png')} style={{ width: 26, height: 26, left: '70%' }} />
+              <Text style={styles.buttonTextGoogle}>Login with Google</Text>
+            </View>
+          </TouchableOpacity>
+
+          <View style={{flexDirection: 'row', justifyContent: 'center', top: '20%'}}>
             <Text style={{ fontSize: 14, color: '#FFFFFF' }}>Already have an account? </Text>
             <TouchableOpacity style={styles.alreadyAccButton}>
               <Text style={styles.alreadyAccText}>Sign In</Text>
@@ -105,49 +109,62 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   title: {
-    fontSize: 30,
+    fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 20,
     left: 30,
-    top: '1%',
+    top: '2.5%',
     color: 'white',
   },
   input: {
-    height: 55,
+    height: 56,
     borderWidth: 1,
     borderColor: '#ccc',
     padding: 10,
     marginBottom: 10,
-    top: '0%',
-    left: '12.5%',
+    top: '1.5%',
+    left: '8%',
     backgroundColor: '#ffffff',
     borderRadius: 10,
+    fontSize: 14,
+    width: 310,
   },
   signUpButton: {
-    width: 250,
-    height: 55,
-    left: 50,
-    top: 10,
+    width: 272,
+    height: 56,
+    left: '13%',
+    top: '3%',
     backgroundColor: '#40DA46',
     borderRadius: 10,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  signUpButtonText: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: 'white',
+  },
+  buttonGoogle:{
+    width: 272,
+    height: 56,
+    left: '13%',
+    top: '5%',
+    backgroundColor: 'white',
+    borderRadius: 10,
+    justifyContent: 'center',
+  },
+  buttonTextGoogle:{
+    fontSize: 16,
+    left: '130%',
+    color: 'black',
   },
   alreadyAccButton:{
     width: 50,
     height: 25,
   },
   alreadyAccText: {
-    
     color: '#40DA46',
-
   },
-  signUpButtonText: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    color: 'white',
-  },
-  
 });
 
 

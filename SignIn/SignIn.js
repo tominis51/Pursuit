@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { View, Image, StyleSheet, Text, TextInput, TouchableOpacity, ImageBackground } from 'react-native';
-import { ForgotPassword } from './ForgotPassword';
+
+
 
 const SignIn = () => {
   
@@ -14,15 +15,15 @@ const SignIn = () => {
   
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <ImageBackground source={require('./assets/backgroundSignIn.png')} resizeMode='cover' style={styles.image}>
+        <ImageBackground source={require('../assets/backgroundSignIn.png')} resizeMode='cover' style={styles.image}>
 
           <Image
-            source={require('./assets/logo1.png')}
+            source={require('../assets/logo.png')}
             style={{
-              width: 100,
-              height: 100,
+              width: 120,
+              height: 120,
               position: 'absolute',
-              top: '20%',
+              top: '17%',
               left: '47.5%',
               transform: [{ translateX: -50 }, { translateY: -50 }],
             }}
@@ -38,27 +39,48 @@ const SignIn = () => {
             width={300}
           />
 
+          
+
           <TextInput
             style={styles.input}
             placeholder="Your password"
             secureTextEntry={true}
             value={password}
             onChangeText={(password) => setPassword({ password })}
-            width={300}
+            width={310}
           />
 
-          <TouchableOpacity onPress={this.handleForgotPassword} style ={styles.button1}>
-          <Text style={styles.buttonText1}>Forgot Password?</Text>
-            
-          </TouchableOpacity>
+          <TouchableOpacity onPress={this.handleForgotPassword} style ={styles.forgotPassButton}>
+          <Text style={styles.forgotPassText}>Forgot Password?</Text>
+        </TouchableOpacity>
 
           <TouchableOpacity onPress={this.handleSignIn} style={styles.button}>
             <Text style={styles.buttonText}>Sign In</Text>
           </TouchableOpacity>
+
+
+          <Text style={{ fontSize: 16, color: 'white', top: '11%', left: '45%' }}>OR</Text>
+
+
+
+
+          <TouchableOpacity onPress={this.handleSignIn} style={styles.buttonGoogle}> 
+            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+              <Image source={require('../assets/GoogleLogo.png')} style={{ width: 26, height: 26, left: '70%' }} />
+              <Text style={styles.buttonTextGoogle}>Login with Google</Text>
+            </View>
+          </TouchableOpacity>
+
+          <View style={{flexDirection: 'row', justifyContent: 'center', bottom: -150}}>
+            <Text style={{ fontSize: 14, color: '#FFFFFF' }}>Don't have an account? </Text>
+            <TouchableOpacity style={styles.alreadyAccButton}>
+              <Text style={styles.alreadyAccText}>Sign Up</Text>
+            </TouchableOpacity>
+          </View>
         </ImageBackground>
       </View>
     );
-  
+  // 68 eilutej palikau this.handleSignIn, nes nezinau, kaip ten tiksliai prisijungs prie Google
 };
 
 const styles = StyleSheet.create({
@@ -77,48 +99,71 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   title: {
-    fontSize: 30,
+    fontSize: 28,
     fontWeight: 'bold',
     marginBottom: 20,
     left: 30,
-    top: '-2.5%',
+    top: '3%',
     color: 'white',
   },
   input: {
-    height: 55,
+    height: 56,
+    width: 317,
     borderWidth: 1,
     borderColor: '#ccc',
     padding: 10,
-    marginBottom: 5,
-    top: '-3%',
+    marginBottom: 10,
+    top: '2.5%',
     left: '8.5%',
     backgroundColor: '#ffffff',
     borderRadius: 10,
   },
   button: {
-    width: 250,
-    height: 55,
-    left: 50,
-    top: 10,
+    width: 273,
+    height: 56,
+    left: 41,
+    top: "5.5%",
     backgroundColor: '#40DA46',
     borderRadius: 10,
     justifyContent: 'center',
     alignItems: 'center',
   },
-  
   buttonText: {
     fontSize: 18,
     fontWeight: 'bold',
     color: 'white',
   },
-  button1: {
-    left: '65%',
-    top: '-2%',
+  forgotPassButton: {
+    left: '54%',
+    top: '3.5%',
   },
-  buttonText1: {
-    fontSize: 10,
+  forgotPassText: {
+    fontSize: 14,
     
     color: 'white',
+  },
+  buttonGoogle:{
+    width: 273,
+    height: 56,
+    left: 41,
+    top: 125,
+    backgroundColor: 'white',
+    borderRadius: 10,
+    justifyContent: 'center',
+  },
+  buttonTextGoogle:{
+    fontSize: 16,
+    left: '130%',
+    color: 'black',
+  },
+  alreadyAccButton:{
+    width: 60,
+    height: 25,
+  },
+  alreadyAccText: {
+    fontSize: 14,
+    color: '#40DA46',
+
   }
 });
 

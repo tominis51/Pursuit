@@ -1,17 +1,16 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import LoadingScreen from './LoadingScreen';
-import SignUp from './SignUp';
-import Account from './Account';
-import MyProfile from './MyProfile';
+import LoadingScreen from './LoadingScreen/LoadingScreen';
+import Account from './Account/Account';
+import MyProfile from './MyProfile/MyProfile';
 import * as React from 'react';
 import { NavigationContainer, TabNavigator, Screen } from '@react-navigation/native';
-import SignIn from './SignIn';
-import SignUp1 from './SignUp1';
+import SignUp from './SignUp/SignUp';
+import SignIn from './SignIn/SignIn';
 
 export default function App() {
   return (
-    <LoadingScreen></LoadingScreen>
+    <Account/>
   );
 }
 
